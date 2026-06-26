@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garen - O Poder de Demacia</title>
+  <meta name="description" content="Guia do Garen top: stats patch 26.12, build, matchups, jogadores Challenger e notícias.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Cinzel:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="intro-gate" id="introGate" aria-live="polite">
+    <div class="intro-backdrop"></div>
+    <div class="intro-content">
+      <div class="sword-track" id="swordTrack">
+        <div class="ground-line"></div>
+        <div class="sword-energy-field" id="swordEnergyField" aria-hidden="true"></div>
+        <div class="sword" id="sword" role="button" aria-label="Arraste a espada para liberar o site" tabindex="0">
+          <div class="sword-idle-glow" aria-hidden="true"></div>
+          <div class="sword-idle-ring ring-a" aria-hidden="true"></div>
+          <div class="sword-idle-ring ring-b" aria-hidden="true"></div>
+          <div class="sword-idle-sparks" id="swordIdleSparks" aria-hidden="true"></div>
+          <img src="assets/swordgaren.png" alt="" class="sword-img" draggable="false">
+        </div>
+      </div>
+    </div>
+    <div class="energy-nova" id="energyNova" aria-hidden="true"></div>
+    <div class="impact-shock" id="impactShock" aria-hidden="true"></div>
+    <div class="impact-particles" id="impactParticles" aria-hidden="true"></div>
+    <div class="intro-flash" id="introFlash"></div>
+  </div>
+
+  <header class="site-header" id="topo">
+    <div class="header-inner container">
+      <a href="#topo" class="brand">
+        <span class="brand-mark">⚔</span>
+        <span class="brand-text">GAREN</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#guia">Guia</a>
+        <a href="#matchups">Matchups</a>
+        <a href="#jogadores">Jogadores</a>
+        <a href="#historia">História</a>
+        <a href="#itens">Itens</a>
+        <a href="#mudancas">Mudanças</a>
+        <a href="#artes">Skins</a>
+        <a href="#noticias">Notícias</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <img src="assets/images/garen_13.jpg" alt="Garen Deus-Rei" class="hero-bg" id="heroBg">
+      <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+      <div class="container hero-content reveal">
+        <p class="hero-kicker">CAMPEÃO DE DEMACIA</p>
+        <h1>Garen, o Poder de Demacia</h1>
+        <p>Build, matchups e referências de alto elo — patch <span id="heroPatch">26.12</span>.</p>
+        <div class="hero-stats" id="heroStats" aria-live="polite"></div>
+        <div class="hero-actions">
+          <a href="#guia" class="btn btn-primary">Build atual</a>
+          <a href="#matchups" class="btn btn-secondary">Matchups</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">História</p>
+          <h2>A jornada de Garen Stemmaguarda</h2>
+        </div>
+
+        <div class="grid two-columns">
+          <article class="card reveal tilt-card">
+            <h3>Origem e legado</h3>
+            <p>
+              Garen nasceu na influente família Stemmaguarda, uma linhagem antiga juramentada à defesa de
+              Demacia. Desde cedo, foi treinado para representar os ideais do reino: disciplina, honra,
+              dever e resistência diante de ameaças externas.
+            </p>
+            <p>
+              Sua carreira militar avança rápido até a Vanguarda Destemida, a elite de soldados demacianos.
+              Com sua espada colossal e armadura antimagia, Garen vira um símbolo de força e liderança no
+              campo de batalha.
+            </p>
+          </article>
+
+          <article class="card reveal tilt-card">
+            <h3>Lux, magia e conflito interno</h3>
+            <p>
+              A irmã mais nova de Garen, Luxanna, nasce com magia em um reino que teme e persegue magos.
+              Esse fato cria o maior conflito pessoal do campeão: proteger sua família ou seguir a rigidez
+              absoluta da lei demaciana.
+            </p>
+            <p>
+              A crise se intensifica com a revolta de Sylas, quando as contradições de Demacia ficam expostas.
+              Garen passa de soldado inflexível para alguém que enxerga que proteger Demacia também exige
+              enfrentar os erros do próprio reino.
+            </p>
+          </article>
+        </div>
+
+        <article class="card wide reveal">
+          <h3>Estado atual da lore</h3>
+          <p>
+            Hoje, Garen continua sendo o rosto do orgulho demaciano, mas com uma visão mais madura. Ele
+            permanece defensor da coroa e do povo, ao mesmo tempo em que carrega as tensões entre tradição,
+            justiça e mudança. Essa dualidade é o que faz do campeão uma das figuras centrais da história de
+            Demacia em Runeterra.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="itens">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Itens</p>
+          <h2>Os melhores itens do Garen por era</h2>
+        </div>
+
+        <div class="era-grid">
+          <article class="era-card reveal tilt-card">
+            <h3>2010 - 2012</h3>
+            <p class="era-sub">Meta de resistência + dano bruto</p>
+            <ul>
+              <li><img src="assets/icons/item_3083.png" alt="Armadura de Warmog"> Armadura de Warmog</li>
+              <li><span class="legacy-chip">Removido</span> Empalador de Atma</li>
+              <li><img src="assets/icons/item_4401.png" alt="Força da Natureza"> Força da Natureza</li>
+            </ul>
+          </article>
+
+          <article class="era-card reveal tilt-card">
+            <h3>2013 - 2015</h3>
+            <p class="era-sub">Pressão lateral e luta longa</p>
+            <ul>
+              <li><img src="assets/icons/item_3071.png" alt="Cutelo Negro"> Cutelo Negro</li>
+              <li><img src="assets/icons/item_3068.png" alt="Égide de Fogo Solar"> Égide de Fogo Solar</li>
+              <li><img src="assets/icons/item_3065.png" alt="Semblante Espiritual"> Semblante Espiritual</li>
+            </ul>
+          </article>
+
+          <article class="era-card reveal tilt-card">
+            <h3>2016 - 2020</h3>
+            <p class="era-sub">Colosso explosivo</p>
+            <ul>
+              <li><img src="assets/icons/item_3078.png" alt="Força da Trindade"> Força da Trindade</li>
+              <li><img src="assets/icons/item_3053.png" alt="Sinal de Sterak"> Sinal de Sterak</li>
+              <li><img src="assets/icons/item_3742.png" alt="Couraça do Defunto"> Couraça do Defunto</li>
+            </ul>
+          </article>
+
+          <article class="era-card reveal tilt-card">
+            <h3>2021 - 2026</h3>
+            <p class="era-sub">Movimento, pressão e execução</p>
+            <ul>
+              <li><img src="assets/icons/item_6631.png" alt="Quebrapassos"> Quebrapassos</li>
+              <li><img src="assets/icons/item_3046.png" alt="Dançarina Fantasma"> Dançarina Fantasma</li>
+              <li><img src="assets/icons/item_3033.png" alt="Lembrete Mortal"> Lembrete Mortal</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mudancas">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Mudanças</p>
+          <h2>Evolução do Garen desde o lançamento</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-date">27 abr 2010 · V1.0.0.83</span>
+            <h3>Lançamento</h3>
+            <p>Garen entra oficialmente no LoL como lutador de topo focado em luta prolongada.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2013 · V3.12</span>
+            <h3>Atualização visual</h3>
+            <p>Nova modelagem, ajustes de animação e melhoria geral de clareza de habilidades.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2015 · V5.16</span>
+            <h3>Rework dos Colossos</h3>
+            <p>
+              Grande reformulação do kit. Entram mudanças estruturais em passiva, W e R, com foco em
+              transformar Garen em uma ameaça de execução no meio da luta.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2019 · V9.20</span>
+            <h3>Mini-rework moderno</h3>
+            <p>
+              Remoção do sistema de Vilão, E passa a escalar melhor com velocidade de ataque e o R ganha
+              padrão de execução mais direto.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2023 · V13.15</span>
+            <h3>Ajustes de ritmo</h3>
+            <p>Refino na mobilidade e na janela de troca para balancear fase de rotas e perseguição.</p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">03 mar 2026 · V26.5 (16.5)</span>
+            <h3>Buff recente</h3>
+            <p>
+              Q recebeu aumento de dano e o E ganhou mais escala com AD. Resultado: melhor pressão de rota
+              e execução de alvos no meio de jogo.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal spotlight">
+            <span class="timeline-date">jun 2026 · V26.12 (16.12)</span>
+            <h3>Meta atual</h3>
+            <p>
+              Tier S no top com ~51,4% WR e ~8,4% pick em Emerald+. Build de Quebrapassos + Dançarina Fantasma
+              domina; Conquistador segue como runa principal.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="guia">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Guia</p>
+          <h2>Build patch <span id="guidePatchTitle">26.12</span></h2>
+        </div>
+
+        <div class="guide-meta reveal" id="guideMeta"></div>
+
+        <div class="guide-grid">
+          <article class="card reveal tilt-card">
+            <h3>Runas</h3>
+            <ul>
+              <li><strong>Precisão:</strong> Conquistador, Triunfo, Lenda: Pressa, Até a Morte</li>
+              <li><strong>Feitiçaria:</strong> Axiom Arcanist, Celeridade</li>
+              <li><strong>Fragmentos:</strong> AS + AD adaptativo + vida escalável</li>
+              <li><strong>Contra poke/alcance:</strong> Fase Acelerada + Determinação</li>
+            </ul>
+          </article>
+
+          <article class="card reveal tilt-card">
+            <h3>Feitiços e skills</h3>
+            <ul>
+              <li><strong>Feitiços:</strong> Flash + Ignite</li>
+              <li><strong>Ordem:</strong> E &gt; Q &gt; W · R em 6/11/16</li>
+              <li><strong>Níveis 1-3:</strong> E → Q → W</li>
+            </ul>
+          </article>
+
+          <article class="card reveal tilt-card">
+            <h3>Build principal</h3>
+            <ul class="build-list">
+              <li><img src="assets/icons/item_6631.png" alt="Quebrapassos"> Quebrapassos</li>
+              <li><img src="assets/icons/item_3006.png" alt="Grevas do Berserker"> Grevas do Berserker</li>
+              <li><img src="assets/icons/item_3046.png" alt="Dançarina Fantasma"> Dançarina Fantasma</li>
+              <li><img src="assets/icons/item_3033.png" alt="Lembrete Mortal"> Lembrete Mortal</li>
+              <li><img src="assets/icons/item_3742.png" alt="Couraça do Defunto"> Couraça do Defunto</li>
+              <li><img src="assets/icons/item_3053.png" alt="Sinal de Sterak"> Sinal de Sterak</li>
+            </ul>
+          </article>
+
+          <article class="card reveal tilt-card">
+            <h3>Fases</h3>
+            <ul>
+              <li><strong>Início:</strong> E na wave, troca curta Q+E, reseta passiva no mato.</li>
+              <li><strong>Meio:</strong> side com Quebrapassos, pressiona torre e força rotações.</li>
+              <li><strong>Fim:</strong> flank pelo mato, Q no carry, R na execução.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="matchups">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Matchups</p>
+          <h2>Garen top — principais confrontos</h2>
+        </div>
+
+        <div class="matchup-toolbar reveal">
+          <input type="search" id="matchupSearch" class="matchup-search" placeholder="Buscar campeão..." aria-label="Buscar matchup">
+          <div class="matchup-filters" id="matchupFilters" role="tablist">
+            <button type="button" class="filter-btn active" data-filter="all">Todos</button>
+            <button type="button" class="filter-btn" data-filter="easy">Favorável</button>
+            <button type="button" class="filter-btn" data-filter="even">Neutro</button>
+            <button type="button" class="filter-btn" data-filter="hard">Difícil</button>
+          </div>
+        </div>
+
+        <div class="matchup-legend reveal">
+          <span class="legend-chip easy">Favorável 52%+</span>
+          <span class="legend-chip even">Neutro 48,6–51,9%</span>
+          <span class="legend-chip hard">Difícil até 48,5%</span>
+        </div>
+
+        <div class="matchup-grid" id="matchupGrid" aria-live="polite"></div>
+        <p class="matchup-source reveal">WR Emerald+ · patch <span id="matchupPatch">26.12</span> · Mobalytics / U.GG / OP.GG</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="jogadores">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Referências</p>
+          <h2>Jogadores e criadores de alto nível</h2>
+        </div>
+        <div class="players-grid" id="playersGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="artes">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Skins</p>
+          <h2>Todas as skins principais oficiais</h2>
+        </div>
+
+        <div class="gallery" id="gallery" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="noticias">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Notícias</p>
+          <h2>Últimas sobre Garen</h2>
+        </div>
+
+        <div class="news-controls reveal">
+          <p id="newsStatus">Carregando notícias...</p>
+          <button class="btn btn-primary small" id="refreshNews">Atualizar agora</button>
+        </div>
+
+        <div class="news-grid" id="newsList" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar imagem">×</button>
+    <img id="lightboxImage" src="" alt="Arte ampliada do Garen">
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Garen · Demacia · patch <span id="footerPatch">26.12</span></p>
+      <p>Stats: U.GG · OP.GG · Mobalytics · Data Dragon · Google News RSS</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
